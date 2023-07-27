@@ -6,7 +6,7 @@
 #include "Castle.h"
 #include "ChessBoardPos.h"
 
-Castle::Castle(std::string filename, ChessBoardPos pos)
+Castle::Castle(const std::string& filename, ChessBoardPos pos)
 {
     if (!piece_texture.loadFromFile(filename))
     {

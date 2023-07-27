@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="ChessBoardPos.cpp" />
     <ClCompile Include="ChessPiece.cpp" />

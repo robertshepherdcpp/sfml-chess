@@ -8,4 +8,6 @@
 struct Board
 {
     void draw(sf::RenderWindow& window);
+
+    auto WhereHasBeenSelected(sf::Event& event)->ChessBoardPos;
 };

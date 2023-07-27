@@ -12,31 +12,31 @@ auto Board::WhereHasBeenSelected(sf::Event& event)->ChessBoardPos
 	if (event.mouseButton.x > 175) {
 		final_x = 7;
     }
-	else if (event.mouseButton.x > 150)
+	else if (event.mouseButton.x >= 150)
 	{
 		final_x = 6;
 	}
-	else if (event.mouseButton.x > 125)
+	else if (event.mouseButton.x >= 125)
 	{
 		final_x = 5;
 	}
-	else if (event.mouseButton.x > 100)
+	else if (event.mouseButton.x >= 100)
 	{
 		final_x = 4;
 	}
-	else if (event.mouseButton.x > 75)
+	else if (event.mouseButton.x >= 75)
 	{
 		final_x = 3;
 	}
-	else if (event.mouseButton.x > 50)
+	else if (event.mouseButton.x >= 50)
 	{
 		final_x = 2;
 	}
-	else if (event.mouseButton.x > 25)
+	else if (event.mouseButton.x >= 25)
 	{
 		final_x = 1;
 	}
-	else if (event.mouseButton.x > 0)
+	else if (event.mouseButton.x >= 0)
 	{
 		final_x = 0;
 	}
@@ -44,31 +44,31 @@ auto Board::WhereHasBeenSelected(sf::Event& event)->ChessBoardPos
 	if (event.mouseButton.y > 175) {
 		final_x = 7;
 	}
-	else if (event.mouseButton.y > 150)
+	else if (event.mouseButton.y >= 150)
 	{
 		final_y = 6;
 	}
-	else if (event.mouseButton.y > 125)
+	else if (event.mouseButton.y >= 125)
 	{
 		final_y = 5;
 	}
-	else if (event.mouseButton.y > 100)
+	else if (event.mouseButton.y >= 100)
 	{
 		final_y = 4;
 	}
-	else if (event.mouseButton.y > 75)
+	else if (event.mouseButton.y >= 75)
 	{
 		final_y = 3;
 	}
-	else if (event.mouseButton.y > 50)
+	else if (event.mouseButton.y >= 50)
 	{
 		final_y = 2;
 	}
-	else if (event.mouseButton.y > 25)
+	else if (event.mouseButton.y >= 25)
 	{
 		final_y = 1;
 	}
-	else if (event.mouseButton.y > 0)
+	else if (event.mouseButton.y >= 0)
 	{
 		final_y = 0;
 	}

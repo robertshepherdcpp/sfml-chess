@@ -4,6 +4,10 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "Snake");
 
+    sf::Texture board_texture;
+    board_texture.loadFromFile("chess_board.png");
+    sf::Sprite board_sprite(board_texture);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -18,7 +22,8 @@ int main()
                 window.setSize(sf::Vector2u(200, 200));
             }
         }
+        window.clear();
+        window.draw(board_sprite);
+        window.display();
     }
-    window.clear();
-    window.display();
 }

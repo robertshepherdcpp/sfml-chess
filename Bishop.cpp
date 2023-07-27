@@ -2,6 +2,7 @@
 
 #include<algorithm>
 #include<vector>
+#include<iostream>
 
 #include "Bishop.h"
 #include "ChessBoardPos.h"
@@ -42,12 +43,18 @@ auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
         positions.push_back(ChessBoardPos(x, y));
     }
 
+    x = position.x;
+    y = position.y;
+
     for (; (x >= 0) && (x <= 7) && (y >= 0) && (y <= 7);)
     {
         x -= 1;
         y -= 1;
         positions.push_back(ChessBoardPos(x, y));
     }
+
+    x = position.x;
+    y = position.y;
 
     for (; (x >= 0) && (x <= 7) && (y >= 0) && (y <= 7);)
     {
@@ -56,6 +63,9 @@ auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
         positions.push_back(ChessBoardPos(x, y));
     }
 
+    x = position.x;
+    y = position.y;
+
     for (; (x >= 0) && (x <= 7) && (y >= 0) && (y <= 7);)
     {
         x -= 1;
@@ -63,7 +73,13 @@ auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
         positions.push_back(ChessBoardPos(x, y));
     }
 
+    x = position.x;
+    y = position.y;
+
     positions.push_back(ChessBoardPos(10, 10));
+
+    std::cout << "hi\n";
+    for (const auto& x : positions) { std::cout << x.x << ", " << x.y << "\n"; }
     return positions;
 }
 

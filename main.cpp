@@ -1,6 +1,7 @@
 #include<SFML/Graphics.hpp>
 
 #include<string>
+#include<iostream>
 
 #include "ChessBoardPos.h"
 #include "Castle.h"
@@ -105,18 +106,22 @@ int main()
                     }
                     else if (bishop_black_left.position == CurrentPositionSelected)
                     {
+                        std::cout << "going to move the bishop\n";
                         bishop_black_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_black_right.position == CurrentPositionSelected)
                     {
+                        std::cout << "going to move the bishop\n";
                         bishop_black_right.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_white_left.position == CurrentPositionSelected)
                     {
+                        std::cout << "going to move the bishop\n";
                         bishop_white_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_white_right.position == CurrentPositionSelected)
                     {
+                        std::cout << "going to move the bishop\n";
                         bishop_white_right.MoveTo(wherePressedOnBoard);
                     }
                     should_move = false;

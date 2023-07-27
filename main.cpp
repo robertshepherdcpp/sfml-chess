@@ -4,6 +4,7 @@
 
 #include "ChessBoardPos.h"
 #include "Castle.h"
+#include "Knight.h"
 #include "Board.h"
 
 int main()
@@ -36,6 +37,11 @@ int main()
     Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0));
     Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7));
     Castle castle_white_right("white_castle.png", ChessBoardPos(7, 7));
+
+    Knight knight_black_left("black_knight.png", ChessBoardPos(1, 0));
+    Knight knight_black_right("black_knight.png", ChessBoardPos(6, 0));
+    Knight knight_white_left("white_knight.png", ChessBoardPos(1, 7));
+    Knight knight_white_right("white_knight.png", ChessBoardPos(6, 7));
 
     while (window.isOpen())
     {
@@ -76,6 +82,22 @@ int main()
                     {
                         castle_white_right.MoveTo(wherePressedOnBoard);
                     }
+                    else if (knight_black_left.position == CurrentPositionSelected)
+                    {
+                        knight_black_left.MoveTo(wherePressedOnBoard);;
+                    }
+                    else if (knight_black_right.position == CurrentPositionSelected)
+                    {
+                        knight_black_right.MoveTo(wherePressedOnBoard);;
+                    }
+                    else if (knight_white_left.position == CurrentPositionSelected)
+                    {
+                        knight_white_left.MoveTo(wherePressedOnBoard);;
+                    }
+                    else if (knight_white_right.position == CurrentPositionSelected)
+                    {
+                        knight_white_right.MoveTo(wherePressedOnBoard);;
+                    }
                     should_move = false;
                 }
             }
@@ -86,6 +108,10 @@ int main()
         castle_black_right.draw(window);
         castle_white_left.draw(window);
         castle_white_right.draw(window);
+        knight_black_left.draw(window);
+        knight_black_right.draw(window);
+        knight_white_left.draw(window);
+        knight_white_right.draw(window);
         window.display();
     }
 }

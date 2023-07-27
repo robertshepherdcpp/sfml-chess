@@ -132,6 +132,7 @@
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="ChessBoardPos.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="Castle.h" />
     <ClInclude Include="ChessBoardPos.h" />
     <ClInclude Include="ChessPiece.h" />
+    <ClInclude Include="Knight.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -134,6 +134,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Board.h" />
     <ClInclude Include="Castle.h" />
     <ClInclude Include="ChessBoardPos.h" />
     <ClInclude Include="ChessPiece.h" />

@@ -1,8 +1,12 @@
-#include "Castle.h"
+#include<SFML/Graphics.hpp>
 
+#include<algorithm>
+#include<vector>
+
+#include "Castle.h"
 #include "ChessBoardPos.h"
 
-Castle::Castle(std::string filename, ChessBoardPos pos, auto, auto)
+Castle::Castle(std::string filename, ChessBoardPos pos)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -17,38 +21,37 @@ Castle::Castle(std::string filename, ChessBoardPos pos, auto, auto)
     position.y = pos.y;
 }
 
-//auto Castle::CanMoveToPosition(const ChessBoardPos& position_) const noexcept -> bool
-//{
-//    if ((position.x == position.x) || (position.y == position.y)) { return true;} else {return false;}
-//}
-//
-//auto Castle::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
-//{
-//    std::vector<ChessBoardPos> positions{};
-//
-//    for (int i = this->position.x; i <= 7; i++)
-//    {
-//        positions.push_back(ChessBoardPos(i, position.y));
-//    }
-//
-//    for (int i = position.x; i >= 0; i--)
-//    {
-//        positions.push_back(ChessBoardPos(i, position.y));
-//    }
-//
-//    for (int i = position.x; i <= 7; i++)
-//    {
-//        positions.push_back(ChessBoardPos(position.x, i));
-//    }
-//
-//    for (int i = position.x; i >= 0; i--)
-//    {
-//        positions.push_back(ChessBoardPos(position.x, i));
-//    }
-//
-//    return positions;
-//}
+void Castle::draw(sf::RenderWindow& window)
+{
+    if (IsAlive)
+    {
+        window.draw(piece_sprite);
+    }
+}
 
-/*
-    std::vector<ChessBoardPos> positions{}; for(int i = 0; i <= 7; i++) {positions.push_back(ChessBoardPos(i, position.y)); positions.push_back(ChessBoardPos(position.x, i));}
-*/
+auto Castle::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
+{
+    std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 7; i++) { positions.push_back(ChessBoardPos(i, position.y)); positions.push_back(ChessBoardPos(position.x, i)); }
+    return positions;
+}
+
+auto Castle::MoveTo(const ChessBoardPos& position_) noexcept -> bool
+{
+    std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
+    if (std::find_if(AllPositions.begin(), AllPositions.end(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
+    {
+        position.x = position_.x;
+        position.y = position_.y;
+
+        const sf::Vector2u position_piece = position_.ToPixelPosition();
+        piece_sprite.setPosition(position_piece.x, position_piece.y);
+        return true;
+    }
+    return false;
+}
+
+auto Castle::CanMoveToPosition(const ChessBoardPos& position_) const noexcept -> bool
+{
+    if ((position_.x == position.x) || (position_.y == position.y)) { return true; }
+    else { return false; }
+}

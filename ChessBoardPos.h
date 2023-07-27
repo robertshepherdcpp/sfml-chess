@@ -6,6 +6,7 @@
 
 struct ChessBoardPos
 {
+	ChessBoardPos() = default;
 	ChessBoardPos(int x_, int y_);
 
 	int x{};

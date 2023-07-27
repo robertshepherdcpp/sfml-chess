@@ -3,7 +3,8 @@
 #include<string>
 
 #include "ChessBoardPos.h"
-#include "ChessPiece.h"
+#include "Castle.h"
+#include "Board.h"
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
     board_texture.loadFromFile("chess_board.png");
     sf::Sprite board_sprite(board_texture);
 
-    ChessPiece castle_black_left(std::string{ "black_castle.png" }, ChessBoardPos(0, 0), [&](ChessBoardPos pos, ChessBoardPos m_pos) -> bool  {if ((pos.x == m_pos.x) || (pos.y == m_pos.y)) { return true; } else { return false; }},
+   /* ChessPiece castle_black_left(std::string{ "black_castle.png" }, ChessBoardPos(0, 0), [&](ChessBoardPos pos, ChessBoardPos m_pos) -> bool  {if ((pos.x == m_pos.x) || (pos.y == m_pos.y)) { return true; } else { return false; }},
                                                                                          [&](ChessBoardPos pos) -> std::vector<ChessBoardPos> {std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 7; i++) { positions.push_back(ChessBoardPos(i, pos.y)); positions.push_back(ChessBoardPos(pos.x, i)); }});
     ChessPiece castle_black_right("black_castle.png", ChessBoardPos(175, 0),             [&](ChessBoardPos pos, ChessBoardPos m_pos) -> bool  {if ((pos.x == m_pos.x) || (pos.y == m_pos.y)) { return true; } else { return false; }},
                                                                                          [&](ChessBoardPos pos) -> std::vector<ChessBoardPos> {std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 7; i++) { positions.push_back(ChessBoardPos(i, pos.y)); positions.push_back(ChessBoardPos(pos.x, i)); }});
@@ -21,6 +22,12 @@ int main()
                                                                                          [&](ChessBoardPos pos) -> std::vector<ChessBoardPos> {std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 7; i++) { positions.push_back(ChessBoardPos(i, pos.y)); positions.push_back(ChessBoardPos(pos.x, i)); }});
     ChessPiece castle_white_right("white_castle.png", ChessBoardPos(175, 175),           [&](ChessBoardPos pos, ChessBoardPos m_pos) -> bool  {if ((pos.x == m_pos.x) || (pos.y == m_pos.y)) { return true; } else { return false; }},
                                                                                          [&](ChessBoardPos pos) -> std::vector<ChessBoardPos> {std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 7; i++) { positions.push_back(ChessBoardPos(i, pos.y)); positions.push_back(ChessBoardPos(pos.x, i)); }});
+   */
+
+    Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0));
+    Castle castle_black_right("black_castle.png", ChessBoardPos(175, 0));
+    Castle castle_white_left("white_castle.png", ChessBoardPos(0, 175));
+    Castle castle_white_right("white_castle.png", ChessBoardPos(175, 175));
 
     while (window.isOpen())
     {

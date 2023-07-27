@@ -43,6 +43,11 @@ int main()
     Knight knight_white_left("white_knight.png", ChessBoardPos(1, 7));
     Knight knight_white_right("white_knight.png", ChessBoardPos(6, 7));
 
+    Knight bishop_black_left("black_bishop.png", ChessBoardPos(2, 0));
+    Knight bishop_black_right("black_bishop.png", ChessBoardPos(6, 0));
+    Knight bishop_white_left("white_bishop.png", ChessBoardPos(2, 7));
+    Knight bishop_white_right("white_bishop.png", ChessBoardPos(5, 7));
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -84,19 +89,35 @@ int main()
                     }
                     else if (knight_black_left.position == CurrentPositionSelected)
                     {
-                        knight_black_left.MoveTo(wherePressedOnBoard);;
+                        knight_black_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (knight_black_right.position == CurrentPositionSelected)
                     {
-                        knight_black_right.MoveTo(wherePressedOnBoard);;
+                        knight_black_right.MoveTo(wherePressedOnBoard);
                     }
                     else if (knight_white_left.position == CurrentPositionSelected)
                     {
-                        knight_white_left.MoveTo(wherePressedOnBoard);;
+                        knight_white_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (knight_white_right.position == CurrentPositionSelected)
                     {
-                        knight_white_right.MoveTo(wherePressedOnBoard);;
+                        knight_white_right.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (bishop_black_left.position == CurrentPositionSelected)
+                    {
+                        bishop_black_left.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (bishop_black_right.position == CurrentPositionSelected)
+                    {
+                        bishop_black_right.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (bishop_white_left.position == CurrentPositionSelected)
+                    {
+                        bishop_white_left.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (bishop_white_right.position == CurrentPositionSelected)
+                    {
+                        bishop_white_right.MoveTo(wherePressedOnBoard);
                     }
                     should_move = false;
                 }
@@ -112,6 +133,10 @@ int main()
         knight_black_right.draw(window);
         knight_white_left.draw(window);
         knight_white_right.draw(window);
+        bishop_black_left.draw(window);
+        bishop_black_right.draw(window);
+        bishop_white_left.draw(window);
+        bishop_white_right.draw(window);
         window.display();
     }
 }

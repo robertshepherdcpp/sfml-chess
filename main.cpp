@@ -33,9 +33,9 @@ int main()
     };
 
     Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0));
-    Castle castle_black_right("black_castle.png", ChessBoardPos(175, 0));
-    Castle castle_white_left("white_castle.png", ChessBoardPos(0, 175));
-    Castle castle_white_right("white_castle.png", ChessBoardPos(175, 175));
+    Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0));
+    Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7));
+    Castle castle_white_right("white_castle.png", ChessBoardPos(7, 7));
 
     while (window.isOpen())
     {

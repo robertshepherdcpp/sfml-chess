@@ -42,7 +42,7 @@ auto Board::WhereHasBeenSelected(sf::Event& event)->ChessBoardPos
 	}
 
 	if (event.mouseButton.y > 175) {
-		final_x = 7;
+		final_y = 7;
 	}
 	else if (event.mouseButton.y >= 150)
 	{

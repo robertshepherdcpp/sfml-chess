@@ -31,7 +31,8 @@ void Castle::draw(sf::RenderWindow& window)
 
 auto Castle::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
 {
-    std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 8; i++) { positions.push_back(ChessBoardPos(i, position.y)); positions.push_back(ChessBoardPos(position.x, i)); }
+    std::vector<ChessBoardPos> positions{}; for (int i = 0; i <= 9; i++) { positions.push_back(ChessBoardPos(i, position.y)); positions.push_back(ChessBoardPos(position.x, i)); }
+    positions.push_back(ChessBoardPos(10, 10));
     return positions;
 }
 

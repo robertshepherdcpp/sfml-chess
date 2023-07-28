@@ -92,7 +92,7 @@ auto Bishop::MoveTo(const ChessBoardPos& position_) noexcept -> bool
         position.y = position_.y;
 
         const sf::Vector2u position_piece = position_.ToPixelPosition();
-        piece_sprite.setPosition(position_piece.x, position_piece.y);
+        piece_sprite.setPosition(static_cast<float>(position_piece.x), static_cast<int>(position_piece.y));
         return true;
     }
     return false;

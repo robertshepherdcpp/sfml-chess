@@ -7,6 +7,7 @@
 #include "Castle.h"
 #include "Knight.h"
 #include "Board.h"
+#include "Pawn.h"
 
 int main()
 {
@@ -34,6 +35,18 @@ int main()
         25, 26, 27, 28, 29, 30, 31, 32
     };
 
+    std::vector<int> pawn_pieces
+    {
+        0, 0, 0, 0, 0, 0, 0, 0, 
+        1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0
+    };
+
     Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0));
     Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0));
     Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7));
@@ -47,7 +60,7 @@ int main()
     Knight bishop_black_left("black_bishop.png", ChessBoardPos(2, 0));
     Knight bishop_black_right("black_bishop.png", ChessBoardPos(6, 0));
     Knight bishop_white_left("white_bishop.png", ChessBoardPos(2, 7));
-    Knight bishop_white_right("white_bishop.png", ChessBoardPos(5, 7));
+    Knight bishop_white_right("white_bishop.png", ChessBoardPos(5, 7)); 
 
     while (window.isOpen())
     {

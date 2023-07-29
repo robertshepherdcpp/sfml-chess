@@ -4,10 +4,10 @@
 #include<vector>
 #include<iostream>
 
-#include "Bishop.h"
+#include "Pawn.h"
 #include "ChessBoardPos.h"
 
-Bishop::Bishop(const std::string& filename, ChessBoardPos pos)
+Pawn::Pawn(const std::string& filename, ChessBoardPos pos)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -20,9 +20,11 @@ Bishop::Bishop(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    file_name = filename;
 }
 
-void Bishop::draw(sf::RenderWindow& window)
+void Pawn::draw(sf::RenderWindow& window)
 {
     if (IsAlive)
     {
@@ -30,58 +32,24 @@ void Bishop::draw(sf::RenderWindow& window)
     }
 }
 
-auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
+auto Pawn::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
 {
     std::vector<ChessBoardPos> positions{};
 
-    int x = position.x;
-    int y = position.y;
-    while ((x >= 0) && (x <= 7) && (y >= 0) && (y <= 7))
+    if (file_name == "white_pawn.png")
     {
-        x += 1;
-        y += 1;
-        positions.push_back(ChessBoardPos(x, y));
+        positions.push_back(ChessBoardPos(position.x, position.y + 1));
+    }
+    else if (file_name == "black_pawn.png")
+    {
+        positions.push_back(ChessBoardPos(position.x, position.y - 1));
     }
 
-    x = position.x;
-    y = position.y;
-
-    while ((x >= 0) && (x <= 7) && (y >= 0) && (y <= 7))
-    {
-        x -= 1;
-        y -= 1;
-        positions.push_back(ChessBoardPos(x, y));
-    }
-
-    x = position.x;
-    y = position.y;
-
-    while ((x >= 0) && (x <= 7) && (y >= 0) && (y <= 7))
-    {
-        x += 1;
-        y -= 1;
-        positions.push_back(ChessBoardPos(x, y));
-    }
-
-    x = position.x;
-    y = position.y;
-
-    while ((x >= 0) && (x <= 7) && (y >= 0) && (y <= 7))
-    {
-        x -= 1;
-        y += 1;
-        positions.push_back(ChessBoardPos(x, y));
-    }
-
-    x = position.x;
-    y = position.y;
-
-    std::cout << "hi\n";
     for (const auto& x : positions) { std::cout << x.x << ", " << x.y << "\n"; }
     return positions;
 }
 
-auto Bishop::MoveTo(const ChessBoardPos& position_) noexcept -> bool
+auto Pawn::MoveTo(const ChessBoardPos& position_) noexcept -> bool
 {
     std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
     if (std::find_if(AllPositions.begin(), AllPositions.end(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
@@ -96,7 +64,7 @@ auto Bishop::MoveTo(const ChessBoardPos& position_) noexcept -> bool
     return false;
 }
 
-auto Bishop::CanMoveToPosition(const ChessBoardPos& position_) const noexcept -> bool
+auto Pawn::CanMoveToPosition(const ChessBoardPos& position_) const noexcept -> bool
 {
     if ((position_.x == position.x) || (position_.y == position.y)) { return true; }
     else { return false; }

@@ -9,6 +9,38 @@
 #include "Board.h"
 #include "Pawn.h"
 
+void print_pawns(sf::RenderWindow& window, std::vector<int>& vec)
+{
+    sf::Texture t_black_pawn; t_black_pawn.loadFromFile("black_pawn.png");
+    sf::Texture t_white_pawn; t_white_pawn.loadFromFile("white_pawn.png");
+
+    sf::Sprite s_black_pawn(t_black_pawn);
+    sf::Sprite s_white_pawn(t_white_pawn);
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        int current_x = 0;
+        int current_y = i % 8;
+        if ((i - current_y) > 0)
+        {
+            current_x = (i - current_y) / 8;
+        }
+        int copy_of_x = current_x;
+        current_x = current_y * 25;
+        current_y = copy_of_x * 25;
+        if (vec[i] == 1)
+        {
+            s_black_pawn.setPosition(current_x, current_y);
+            window.draw(s_black_pawn);
+        }
+        else if (vec[1] == 2)
+        {
+            s_white_pawn.setPosition(current_x, current_y);
+            window.draw(s_white_pawn);
+        }
+    }
+}
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "Snake");
@@ -137,6 +169,29 @@ int main()
                         std::cout << "going to move the bishop\n";
                         bishop_white_right.MoveTo(wherePressedOnBoard);
                     }
+                    else
+                    {
+                        int x = CurrentPositionSelected.y;
+                        int y = CurrentPositionSelected.x;
+
+                        int position_of_pawn = (x * 8) + y;
+                        if (pawn_pieces[position_of_pawn] == 1)
+                        {
+                            int x_ = wherePressedOnBoard.y;
+                            int y_ = wherePressedOnBoard.x;
+                            int position_of_pawn_to_go = (x_ * 8) + y_;
+                            pawn_pieces[position_of_pawn] = 0;
+                            pawn_pieces[position_of_pawn_to_go] = 1;
+                        }
+                        if (pawn_pieces[position_of_pawn] == 2)
+                        {
+                            int x_ = wherePressedOnBoard.y;
+                            int y_ = wherePressedOnBoard.x;
+                            int position_of_pawn_to_go = (x_ * 8) + y_;
+                            pawn_pieces[position_of_pawn] = 0;
+                            pawn_pieces[position_of_pawn_to_go] = 2;
+                        }
+                    }
                     should_move = false;
                 }
             }
@@ -155,6 +210,7 @@ int main()
         bishop_black_right.draw(window);
         bishop_white_left.draw(window);
         bishop_white_right.draw(window);
+        print_pawns(window, pawn_pieces);
         window.display();
     }
 }

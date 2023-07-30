@@ -8,6 +8,9 @@
 #include "Knight.h"
 #include "Board.h"
 #include "Pawn.h"
+#include "Bishop.h"
+#include "King.h"
+#include "Queen.h"
 
 void print_pawns(sf::RenderWindow& window, std::vector<int>& vec)
 {
@@ -33,7 +36,7 @@ void print_pawns(sf::RenderWindow& window, std::vector<int>& vec)
             s_black_pawn.setPosition(current_x, current_y);
             window.draw(s_black_pawn);
         }
-        else if (vec[1] == 2)
+        if (vec[i] == 2)
         {
             s_white_pawn.setPosition(current_x, current_y);
             window.draw(s_white_pawn);
@@ -75,7 +78,7 @@ int main()
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
-        1, 1, 1, 1, 1, 1, 1, 1,
+        2, 2, 2, 2, 2, 2, 2, 2,
         0, 0, 0, 0, 0, 0, 0, 0
     };
 
@@ -89,10 +92,16 @@ int main()
     Knight knight_white_left("white_knight.png", ChessBoardPos(1, 7));
     Knight knight_white_right("white_knight.png", ChessBoardPos(6, 7));
 
-    Knight bishop_black_left("black_bishop.png", ChessBoardPos(2, 0));
-    Knight bishop_black_right("black_bishop.png", ChessBoardPos(6, 0));
-    Knight bishop_white_left("white_bishop.png", ChessBoardPos(2, 7));
-    Knight bishop_white_right("white_bishop.png", ChessBoardPos(5, 7)); 
+    Bishop bishop_black_left("black_bishop.png", ChessBoardPos(2, 0));
+    Bishop bishop_black_right("black_bishop.png", ChessBoardPos(5, 0));
+    Bishop bishop_white_left("white_bishop.png", ChessBoardPos(2, 7));
+    Bishop bishop_white_right("white_bishop.png", ChessBoardPos(5, 7)); 
+
+    King king_black("black_king.png", ChessBoardPos(3, 0));
+    King king_white("white_king.png", ChessBoardPos(4, 7));
+
+    Queen queen_black("black_queen.png", ChessBoardPos(4, 0));
+    Queen queen_white("white_queen.png", ChessBoardPos(3, 7));
 
     while (window.isOpen())
     {
@@ -151,23 +160,35 @@ int main()
                     }
                     else if (bishop_black_left.position == CurrentPositionSelected)
                     {
-                        std::cout << "going to move the bishop\n";
                         bishop_black_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_black_right.position == CurrentPositionSelected)
                     {
-                        std::cout << "going to move the bishop\n";
                         bishop_black_right.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_white_left.position == CurrentPositionSelected)
                     {
-                        std::cout << "going to move the bishop\n";
                         bishop_white_left.MoveTo(wherePressedOnBoard);
                     }
                     else if (bishop_white_right.position == CurrentPositionSelected)
                     {
-                        std::cout << "going to move the bishop\n";
                         bishop_white_right.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (king_black.position == CurrentPositionSelected)
+                    {
+                        king_black.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (king_white.position == CurrentPositionSelected)
+                    {
+                        king_white.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (queen_black.position == CurrentPositionSelected)
+                    {
+                        queen_black.MoveTo(wherePressedOnBoard);
+                    }
+                    else if (queen_white.position == CurrentPositionSelected)
+                    {
+                        queen_white.MoveTo(wherePressedOnBoard);
                     }
                     else
                     {
@@ -210,6 +231,10 @@ int main()
         bishop_black_right.draw(window);
         bishop_white_left.draw(window);
         bishop_white_right.draw(window);
+        king_black.draw(window);
+        king_white.draw(window);
+        queen_black.draw(window);
+        queen_white.draw(window);
         print_pawns(window, pawn_pieces);
         window.display();
     }

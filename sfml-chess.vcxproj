@@ -133,9 +133,11 @@
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="ChessBoardPos.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="Queen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bishop.h" />
@@ -143,8 +145,10 @@
     <ClInclude Include="Castle.h" />
     <ClInclude Include="ChessBoardPos.h" />
     <ClInclude Include="ChessPiece.h" />
+    <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="Queen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

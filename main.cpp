@@ -443,22 +443,90 @@ int main()
         }
         window.clear();
         window.draw(board_sprite);
-        castle_black_left.draw(window);
-        castle_black_right.draw(window);
-        castle_white_left.draw(window);
-        castle_white_right.draw(window);
-        knight_black_left.draw(window);
-        knight_black_right.draw(window);
-        knight_white_left.draw(window);
-        knight_white_right.draw(window);
-        bishop_black_left.draw(window);
-        bishop_black_right.draw(window);
-        bishop_white_left.draw(window);
-        bishop_white_right.draw(window);
-        king_black.draw(window);
-        king_white.draw(window);
-        queen_black.draw(window);
-        queen_white.draw(window);
+        //castle_black_left.draw(window);
+        //castle_black_right.draw(window);
+        //castle_white_left.draw(window);
+        //castle_white_right.draw(window);
+        //knight_black_left.draw(window);
+        //knight_black_right.draw(window);
+        //knight_white_left.draw(window);
+        //knight_white_right.draw(window);
+        //bishop_black_left.draw(window);
+        //bishop_black_right.draw(window);
+        //bishop_white_left.draw(window);
+        //bishop_white_right.draw(window);
+        //king_black.draw(window);
+        //king_white.draw(window);
+        //queen_black.draw(window);
+        //queen_white.draw(window);
+        for (const auto i : chess_pieces_positions)
+        {
+            if (i == 1)
+            {
+                castle_black_left.draw(window);
+            }
+            else if (i == 2)
+            {
+                knight_black_left.draw(window);
+            }
+            else if (i == 3)
+            {
+                bishop_black_left.draw(window);
+            }
+            else if (i == 4)
+            {
+                king_black.draw(window);
+            }
+            else if (i == 5)
+            {
+                queen_black.draw(window);
+            }
+            else if (i == 6)
+            {
+                castle_black_right.draw(window);
+            }
+            else if (i == 7)
+            {
+                knight_black_right.draw(window);
+            }
+            else if (i == 8)
+            {
+                bishop_black_right.draw(window);
+            }
+            else if (i == 25)
+            {
+                castle_white_left.draw(window);
+            }
+            else if (i == 26)
+            {
+                knight_white_left.draw(window);
+            }
+            else if (i == 27)
+            {
+                bishop_white_left.draw(window);
+            }
+            else if (i == 28)
+            {
+                queen_white.draw(window);
+            }
+            else if (i == 29)
+            {
+                king_white.draw(window);
+            }
+            else if (i == 30)
+            {
+                bishop_white_right.draw(window);
+            }
+            else if (i == 31)
+            {
+                knight_white_right.draw(window);
+            }
+            
+            else if (i == 32)
+            {
+                castle_white_right.draw(window);
+            }
+        }
         print_pawns(window, pawn_pieces);
         window.display();
     }

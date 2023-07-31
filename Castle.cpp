@@ -6,7 +6,7 @@
 #include "Castle.h"
 #include "ChessBoardPos.h"
 
-Castle::Castle(const std::string& filename, ChessBoardPos pos)
+Castle::Castle(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -19,6 +19,8 @@ Castle::Castle(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    AssociatedNum = AssocNum;
 }
 
 void Castle::draw(sf::RenderWindow& window)

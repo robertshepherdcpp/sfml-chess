@@ -8,7 +8,7 @@
 #include "Queen.h"
 #include "ChessBoardPos.h"
 
-Queen::Queen(const std::string& filename, ChessBoardPos pos)
+Queen::Queen(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -21,6 +21,8 @@ Queen::Queen(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    AssociatedNum = AssocNum;
 }
 
 void Queen::draw(sf::RenderWindow& window)
@@ -34,8 +36,8 @@ void Queen::draw(sf::RenderWindow& window)
 auto Queen::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>
 {
     std::vector<ChessBoardPos> positions{};
-    positions = Castle{"black_castle.png", ChessBoardPos(5, 5)}.GetAllPositionsAllowedToMoveTo();
-    std::vector<ChessBoardPos> bishop_positions =  Bishop{ "black_bishop.png", ChessBoardPos(5, 5)}.GetAllPositionsAllowedToMoveTo();
+    positions = Castle("black_castle.png", ChessBoardPos(5, 5), 33).GetAllPositionsAllowedToMoveTo();
+    std::vector<ChessBoardPos> bishop_positions =  Bishop( "black_bishop.png", ChessBoardPos(5, 5), 33).GetAllPositionsAllowedToMoveTo();
     for (const auto& x : bishop_positions)
     {
         positions.push_back(x);

@@ -7,7 +7,7 @@
 
 struct King
 {
-	King(const std::string& filename, ChessBoardPos pos);
+	King(const std::string& filename, ChessBoardPos pos, int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 
@@ -19,6 +19,7 @@ struct King
 	ChessBoardPos position;
 
 	bool IsAlive{ true };
+	int AssociatedNum{};
 
 	sf::Texture piece_texture;
 	sf::Sprite piece_sprite;

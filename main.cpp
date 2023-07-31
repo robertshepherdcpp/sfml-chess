@@ -82,26 +82,26 @@ int main()
         0, 0, 0, 0, 0, 0, 0, 0
     };
 
-    Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0));
-    Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0));
-    Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7));
-    Castle castle_white_right("white_castle.png", ChessBoardPos(7, 7));
+    Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0), 1);
+    Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0), 8);
+    Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7), 25);
+    Castle castle_white_right("white_castle.png", ChessBoardPos(7, 7), 32);
 
-    Knight knight_black_left("black_knight.png", ChessBoardPos(1, 0));
-    Knight knight_black_right("black_knight.png", ChessBoardPos(6, 0));
-    Knight knight_white_left("white_knight.png", ChessBoardPos(1, 7));
-    Knight knight_white_right("white_knight.png", ChessBoardPos(6, 7));
+    Knight knight_black_left("black_knight.png", ChessBoardPos(1, 0), 2);
+    Knight knight_black_right("black_knight.png", ChessBoardPos(6, 0), 7);
+    Knight knight_white_left("white_knight.png", ChessBoardPos(1, 7), 26);
+    Knight knight_white_right("white_knight.png", ChessBoardPos(6, 7), 31);
 
-    Bishop bishop_black_left("black_bishop.png", ChessBoardPos(2, 0));
-    Bishop bishop_black_right("black_bishop.png", ChessBoardPos(5, 0));
-    Bishop bishop_white_left("white_bishop.png", ChessBoardPos(2, 7));
-    Bishop bishop_white_right("white_bishop.png", ChessBoardPos(5, 7)); 
+    Bishop bishop_black_left("black_bishop.png", ChessBoardPos(2, 0), 3);
+    Bishop bishop_black_right("black_bishop.png", ChessBoardPos(5, 0), 6);
+    Bishop bishop_white_left("white_bishop.png", ChessBoardPos(2, 7), 27);
+    Bishop bishop_white_right("white_bishop.png", ChessBoardPos(5, 7), 30); 
 
-    King king_black("black_king.png", ChessBoardPos(3, 0));
-    King king_white("white_king.png", ChessBoardPos(4, 7));
+    King king_black("black_king.png", ChessBoardPos(3, 0), 4);
+    King king_white("white_king.png", ChessBoardPos(4, 7), 29);
 
-    Queen queen_black("black_queen.png", ChessBoardPos(4, 0));
-    Queen queen_white("white_queen.png", ChessBoardPos(3, 7));
+    Queen queen_black("black_queen.png", ChessBoardPos(4, 0), 5);
+    Queen queen_white("white_queen.png", ChessBoardPos(3, 7), 28);
 
     while (window.isOpen())
     {
@@ -128,67 +128,291 @@ int main()
                 {
                     if (castle_black_left.position == CurrentPositionSelected)
                     {
-                        castle_black_left.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_black_left.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (castle_black_left.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = castle_black_left.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (castle_black_right.position == CurrentPositionSelected)
                     {
-                        castle_black_right.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_black_right.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (castle_black_right.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = castle_black_right.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (castle_white_left.position == CurrentPositionSelected)
                     {
-                        castle_white_left.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_white_left.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (castle_white_left.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = castle_white_left.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (castle_white_right.position == CurrentPositionSelected)
                     {
-                        castle_white_right.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_white_right.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (castle_white_right.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = castle_white_right.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (knight_black_left.position == CurrentPositionSelected)
                     {
-                        knight_black_left.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_black_left.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (knight_black_left.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = knight_black_left.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (knight_black_right.position == CurrentPositionSelected)
                     {
-                        knight_black_right.MoveTo(wherePressedOnBoard);
+                        if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_black_right.AssociatedNum) != chess_pieces_positions.end())
+                        {
+                            if (knight_black_right.MoveTo(wherePressedOnBoard))
+                            {
+                                int current_x = wherePressedOnBoard.x;
+                                int current_y = wherePressedOnBoard.y * 8;
+                                int position = current_x + current_y;
+                                chess_pieces_positions[position] = knight_black_right.AssociatedNum;
+
+                                int current_x_ = CurrentPositionSelected.x;
+                                int current_y_ = CurrentPositionSelected.y * 8;
+                                int position_ = current_x_ + current_y_;
+                                chess_pieces_positions[position_] = 0;
+                            }
+                        }
                     }
                     else if (knight_white_left.position == CurrentPositionSelected)
                     {
-                        knight_white_left.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_white_left.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (knight_white_left.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = knight_white_left.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (knight_white_right.position == CurrentPositionSelected)
                     {
-                        knight_white_right.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_white_right.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (knight_white_right.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = knight_white_right.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (bishop_black_left.position == CurrentPositionSelected)
                     {
-                        bishop_black_left.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_black_left.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (bishop_black_left.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = bishop_black_left.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (bishop_black_right.position == CurrentPositionSelected)
                     {
-                        bishop_black_right.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_black_right.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (bishop_black_right.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = bishop_black_right.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (bishop_white_left.position == CurrentPositionSelected)
                     {
-                        bishop_white_left.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_white_left.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (bishop_white_left.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = bishop_white_left.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (bishop_white_right.position == CurrentPositionSelected)
                     {
-                        bishop_white_right.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_white_right.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (bishop_white_right.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = bishop_white_right.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (king_black.position == CurrentPositionSelected)
                     {
-                        king_black.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), king_black.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (king_black.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = king_black.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (king_white.position == CurrentPositionSelected)
                     {
-                        king_white.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), king_white.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (king_white.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = king_white.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (queen_black.position == CurrentPositionSelected)
                     {
-                        queen_black.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_black.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (queen_black.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = queen_black.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else if (queen_white.position == CurrentPositionSelected)
                     {
-                        queen_white.MoveTo(wherePressedOnBoard);
+                    if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_white.AssociatedNum) != chess_pieces_positions.end())
+                    {
+                        if (queen_white.MoveTo(wherePressedOnBoard))
+                        {
+                            int current_x = wherePressedOnBoard.x;
+                            int current_y = wherePressedOnBoard.y * 8;
+                            int position = current_x + current_y;
+                            chess_pieces_positions[position] = queen_white.AssociatedNum;
+
+                            int current_x_ = CurrentPositionSelected.x;
+                            int current_y_ = CurrentPositionSelected.y * 8;
+                            int position_ = current_x_ + current_y_;
+                            chess_pieces_positions[position_] = 0;
+                        }
+                    }
                     }
                     else
                     {

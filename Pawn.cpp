@@ -7,7 +7,7 @@
 #include "Pawn.h"
 #include "ChessBoardPos.h"
 
-Pawn::Pawn(const std::string& filename, ChessBoardPos pos)
+Pawn::Pawn(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -22,6 +22,8 @@ Pawn::Pawn(const std::string& filename, ChessBoardPos pos)
     position.y = pos.y;
 
     file_name = filename;
+
+    AssociatedNum = AssocNum;
 }
 
 void Pawn::draw(sf::RenderWindow& window)

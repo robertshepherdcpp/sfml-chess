@@ -6,7 +6,7 @@
 #include "Knight.h"
 #include "ChessBoardPos.h"
 
-Knight::Knight(const std::string& filename, ChessBoardPos pos)
+Knight::Knight(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -19,6 +19,8 @@ Knight::Knight(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    AssociatedNum = AssocNum;
 }
 
 void Knight::draw(sf::RenderWindow& window)

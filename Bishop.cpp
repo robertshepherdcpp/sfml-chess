@@ -7,7 +7,7 @@
 #include "Bishop.h"
 #include "ChessBoardPos.h"
 
-Bishop::Bishop(const std::string& filename, ChessBoardPos pos)
+Bishop::Bishop(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -20,6 +20,8 @@ Bishop::Bishop(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    AssociatedNum = AssocNum;
 }
 
 void Bishop::draw(sf::RenderWindow& window)

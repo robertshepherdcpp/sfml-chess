@@ -6,7 +6,7 @@
 #include "King.h"
 #include "ChessBoardPos.h"
 
-King::King(const std::string& filename, ChessBoardPos pos)
+King::King(const std::string& filename, ChessBoardPos pos, int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {
@@ -19,6 +19,8 @@ King::King(const std::string& filename, ChessBoardPos pos)
 
     position.x = pos.x;
     position.y = pos.y;
+
+    AssociatedNum = AssocNum;
 }
 
 void King::draw(sf::RenderWindow& window)

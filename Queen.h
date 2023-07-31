@@ -7,7 +7,7 @@
 
 struct Queen
 {
-	Queen(const std::string& filename, ChessBoardPos pos);
+	Queen(const std::string& filename, ChessBoardPos pos, int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 
@@ -19,6 +19,7 @@ struct Queen
 	ChessBoardPos position;
 
 	bool IsAlive{ true };
+	int AssociatedNum{};
 
 	std::string file_name{};
 

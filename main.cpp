@@ -130,21 +130,21 @@ int main()
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_black_left.AssociatedNum) != chess_pieces_positions.end())
                         {
-                            if (castle_black_left.MoveTo(wherePressedOnBoard))
-                            {
-                                int current_x = wherePressedOnBoard.x;
-                                int current_y = wherePressedOnBoard.y * 8;
-                                int position = current_x + current_y;
-                                chess_pieces_positions[position] = castle_black_left.AssociatedNum;
+							if (castle_black_left.MoveTo(wherePressedOnBoard))
+							{
+								int current_x = wherePressedOnBoard.x;
+								int current_y = wherePressedOnBoard.y * 8;
+								int position = current_x + current_y;
+								chess_pieces_positions[position] = castle_black_left.AssociatedNum;
 
-                                int current_x_ = CurrentPositionSelected.x;
-                                int current_y_ = CurrentPositionSelected.y * 8;
-                                int position_ = current_x_ + current_y_;
-                                chess_pieces_positions[position_] = 0;
-                            }
+								int current_x_ = CurrentPositionSelected.x;
+								int current_y_ = CurrentPositionSelected.y * 8;
+								int position_ = current_x_ + current_y_;
+								chess_pieces_positions[position_] = 0;
+							}
                         }
                     }
-                    else if (castle_black_right.position == CurrentPositionSelected)
+                    if (castle_black_right.position == CurrentPositionSelected)
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_black_right.AssociatedNum) != chess_pieces_positions.end())
                         {
@@ -162,7 +162,7 @@ int main()
                             }
                         }
                     }
-                    else if (castle_white_left.position == CurrentPositionSelected)
+                    if (castle_white_left.position == CurrentPositionSelected)
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_white_left.AssociatedNum) != chess_pieces_positions.end())
                         {
@@ -180,7 +180,7 @@ int main()
                             }
                         }
                     }
-                    else if (castle_white_right.position == CurrentPositionSelected)
+                    if (castle_white_right.position == CurrentPositionSelected)
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), castle_white_right.AssociatedNum) != chess_pieces_positions.end())
                         {
@@ -198,7 +198,7 @@ int main()
                             }
                         }
                     }
-                    else if (knight_black_left.position == CurrentPositionSelected)
+                    if (knight_black_left.position == CurrentPositionSelected)
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_black_left.AssociatedNum) != chess_pieces_positions.end())
                         {
@@ -216,7 +216,7 @@ int main()
                             }
                         }
                     }
-                    else if (knight_black_right.position == CurrentPositionSelected)
+                    if (knight_black_right.position == CurrentPositionSelected)
                     {
                         if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_black_right.AssociatedNum) != chess_pieces_positions.end())
                         {
@@ -234,7 +234,7 @@ int main()
                             }
                         }
                     }
-                    else if (knight_white_left.position == CurrentPositionSelected)
+                    if (knight_white_left.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_white_left.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -252,7 +252,7 @@ int main()
                         }
                     }
                     }
-                    else if (knight_white_right.position == CurrentPositionSelected)
+                    if (knight_white_right.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), knight_white_right.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -270,7 +270,7 @@ int main()
                         }
                     }
                     }
-                    else if (bishop_black_left.position == CurrentPositionSelected)
+                    if (bishop_black_left.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_black_left.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -288,7 +288,7 @@ int main()
                         }
                     }
                     }
-                    else if (bishop_black_right.position == CurrentPositionSelected)
+                    if (bishop_black_right.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_black_right.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -306,7 +306,7 @@ int main()
                         }
                     }
                     }
-                    else if (bishop_white_left.position == CurrentPositionSelected)
+                    if (bishop_white_left.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_white_left.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -324,7 +324,7 @@ int main()
                         }
                     }
                     }
-                    else if (bishop_white_right.position == CurrentPositionSelected)
+                    if (bishop_white_right.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), bishop_white_right.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -342,7 +342,7 @@ int main()
                         }
                     }
                     }
-                    else if (king_black.position == CurrentPositionSelected)
+                    if (king_black.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), king_black.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -360,7 +360,7 @@ int main()
                         }
                     }
                     }
-                    else if (king_white.position == CurrentPositionSelected)
+                    if (king_white.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), king_white.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -378,7 +378,7 @@ int main()
                         }
                     }
                     }
-                    else if (queen_black.position == CurrentPositionSelected)
+                    if (queen_black.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_black.AssociatedNum) != chess_pieces_positions.end())
                     {
@@ -396,7 +396,7 @@ int main()
                         }
                     }
                     }
-                    else if (queen_white.position == CurrentPositionSelected)
+                    if (queen_white.position == CurrentPositionSelected)
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_white.AssociatedNum) != chess_pieces_positions.end())
                     {

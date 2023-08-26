@@ -79,7 +79,6 @@ auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
     x = position.x;
     y = position.y;
 
-    std::cout << "hi\n";
     for (const auto& v : positions) { std::cout << v.x << ", " << v.y << "\n"; }
     return positions;
 }

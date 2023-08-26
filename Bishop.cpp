@@ -3,6 +3,7 @@
 #include<algorithm>
 #include<vector>
 #include<iostream>
+#include<ranges>
 
 #include "Bishop.h"
 #include "ChessBoardPos.h"
@@ -86,7 +87,7 @@ auto Bishop::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
 auto Bishop::MoveTo(const ChessBoardPos& position_) noexcept -> bool
 {
     std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
-    if (std::find_if(AllPositions.begin(), AllPositions.end(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
+    if (std::ranges::find_if(AllPositions, [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
     {
         position.x = position_.x;
         position.y = position_.y;

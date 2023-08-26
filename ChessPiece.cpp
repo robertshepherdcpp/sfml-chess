@@ -1,6 +1,7 @@
 #include<SFML/Graphics.hpp>
 
 #include<algorithm>
+#include<ranges>
 
 #include "ChessPiece.h"
 #include "ChessBoardPos.h"
@@ -34,7 +35,7 @@ void ChessPiece::draw(sf::RenderWindow& window)
 auto ChessPiece::MoveTo(const ChessBoardPos& position_) noexcept -> void
 {
     std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
-    if (std::find_if(AllPositions.begin(), AllPositions.end(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
+    if (std::ranges::find_if(AllPositions, [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
     {
         position.x = position_.x;
         position.y = position_.y;

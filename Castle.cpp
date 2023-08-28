@@ -41,7 +41,8 @@ auto Castle::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Ches
 
 auto Castle::MoveTo(const ChessBoardPos& position_) noexcept -> bool
 {
-    if (std::ranges::find_if(GetAllPositionsAllowedToMoveTo(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
+    std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
+    if (std::ranges::find_if(AllPositions, [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
     {
         position.x = position_.x;
         position.y = position_.y;

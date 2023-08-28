@@ -26,7 +26,7 @@ Queen::Queen(const std::string& filename, ChessBoardPos pos, int AssocNum)
     AssociatedNum = AssocNum;
 }
 
-void Queen::draw(sf::RenderWindow& window)
+void Queen::draw(sf::RenderWindow& window) noexcept
 {
     if (IsAlive)
     {

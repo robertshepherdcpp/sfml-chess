@@ -9,7 +9,7 @@ struct Queen
 {
 	Queen(const std::string& filename, ChessBoardPos pos, int AssocNum);
 
-	void draw(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window) noexcept;
 
 	auto MoveTo(const ChessBoardPos& position) noexcept -> bool;
 

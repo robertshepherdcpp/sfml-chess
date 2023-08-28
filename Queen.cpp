@@ -48,8 +48,7 @@ auto Queen::GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<Chess
 
 auto Queen::MoveTo(const ChessBoardPos& position_) noexcept -> bool
 {
-    std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
-    if (std::ranges::find_if(AllPositions, [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
+    if (std::ranges::find_if(GetAllPositionsAllowedToMoveTo(), [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
     {
         position.x = position_.x;
         position.y = position_.y;

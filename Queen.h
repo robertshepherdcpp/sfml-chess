@@ -11,7 +11,7 @@ struct Queen
 
 	void draw(sf::RenderWindow& window) noexcept;
 
-	auto MoveTo(const ChessBoardPos& position) noexcept -> bool;
+	auto MoveTo(const ChessBoardPos& position, std::vector<int>& board_) noexcept -> bool;
 
 	auto CanMoveToPosition(const ChessBoardPos& position) const noexcept -> bool;
 	auto GetAllPositionsAllowedToMoveTo() const noexcept -> std::vector<ChessBoardPos>;

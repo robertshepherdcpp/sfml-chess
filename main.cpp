@@ -56,6 +56,8 @@ int main()
 
     bool should_move = false;
 
+    bool white_black_move = true;
+
     ChessBoardPos CurrentPositionSelected = ChessBoardPos(0, 0);
 
     std::vector<int> chess_pieces_positions
@@ -382,7 +384,7 @@ int main()
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_black.AssociatedNum) != chess_pieces_positions.end())
                     {
-                        if (queen_black.MoveTo(wherePressedOnBoard))
+                        if (queen_black.MoveTo(wherePressedOnBoard, chess_pieces_positions))
                         {
                             int current_x = wherePressedOnBoard.x;
                             int current_y = wherePressedOnBoard.y * 8;
@@ -400,7 +402,7 @@ int main()
                     {
                     if (std::find(chess_pieces_positions.begin(), chess_pieces_positions.end(), queen_white.AssociatedNum) != chess_pieces_positions.end())
                     {
-                        if (queen_white.MoveTo(wherePressedOnBoard))
+                        if (queen_white.MoveTo(wherePressedOnBoard, chess_pieces_positions))
                         {
                             int current_x = wherePressedOnBoard.x;
                             int current_y = wherePressedOnBoard.y * 8;

@@ -51,8 +51,8 @@ auto Queen::MoveTo(const ChessBoardPos& position_, std::vector<int>& board_) noe
     std::vector<ChessBoardPos> AllPositions = GetAllPositionsAllowedToMoveTo();
     if (std::ranges::find_if(AllPositions, [&](const ChessBoardPos& pos) {return ((pos.x == position_.x) && (pos.y == position_.y)); }) != AllPositions.end())
     {
-        //board_[position.y * 8 + position.x] = 0;
-        //board_[position_.y * 8 + position_.x] = AssociatedNum;
+        board_[position.y * 8 + position.x] = 0;
+        board_[position_.y * 8 + position_.x] = AssociatedNum;
 
         position.x = position_.x;
         position.y = position_.y;

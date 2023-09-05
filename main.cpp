@@ -442,6 +442,24 @@ int main()
                     should_move = false;
                 }
             }
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.code == sf::Keyboard::O)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 0;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+            }
         }
         window.clear();
         window.draw(board_sprite);

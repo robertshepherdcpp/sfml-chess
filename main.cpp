@@ -1,3 +1,7 @@
+#ifndef SFML_STATIC
+#define SMFL_STATIC
+#endif
+
 #include<SFML/Graphics.hpp>
 
 #include<string>

@@ -8,7 +8,7 @@
 #include "Bishop.h"
 #include "ChessBoardPos.h"
 
-Bishop::Bishop(const std::string& filename, ChessBoardPos pos, int AssocNum)
+Bishop::Bishop(const std::string& filename, const ChessBoardPos pos, const int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {

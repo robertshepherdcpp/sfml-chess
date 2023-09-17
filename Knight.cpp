@@ -7,7 +7,7 @@
 #include "Knight.h"
 #include "ChessBoardPos.h"
 
-Knight::Knight(const std::string& filename, ChessBoardPos pos, int AssocNum)
+Knight::Knight(const std::string& filename, const ChessBoardPos pos, const int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {

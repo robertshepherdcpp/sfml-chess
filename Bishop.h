@@ -7,7 +7,7 @@
 
 struct Bishop
 {
-	Bishop(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	Bishop(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 

@@ -7,7 +7,7 @@
 
 struct Castle
 {
-	Castle(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	Castle(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 

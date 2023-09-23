@@ -7,7 +7,7 @@
 
 struct Pawn
 {
-	Pawn(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	Pawn(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 

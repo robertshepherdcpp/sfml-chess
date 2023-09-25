@@ -8,7 +8,7 @@
 
 struct ChessPiece
 {
-	ChessPiece(std::string filename, ChessBoardPos pos, auto canMoveToPos, auto getAllPosAllowedToMove);
+	ChessPiece(const std::string filename, cobst ChessBoardPos pos, const auto canMoveToPos, const auto getAllPosAllowedToMove);
 
 	void draw(sf::RenderWindow& window);
 

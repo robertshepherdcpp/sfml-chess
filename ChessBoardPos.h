@@ -13,6 +13,7 @@ struct ChessBoardPos
 	int y{};
 
 	auto ToPixelPosition() const noexcept -> sf::Vector2u;
+	auto ToVector2f() const noexcept -> sf::Vector2f;
 
 	constexpr std::strong_ordering operator<=>(const ChessBoardPos&) const = default;
 };

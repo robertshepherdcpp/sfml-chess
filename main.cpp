@@ -88,6 +88,8 @@ int main()
         0, 0, 0, 0, 0, 0, 0, 0
     };
 
+    std::vector<sf::Sprite> additional_pieces{};
+
     Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0), 1);
     Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0), 8);
     Castle castle_white_left("white_castle.png", ChessBoardPos(0, 7), 25);
@@ -502,6 +504,10 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
+                    sf::Sprite copy_sprite = castle_white_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
+
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
@@ -516,6 +522,10 @@ int main()
                     int pixel_y = pixelPosition.y;
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    sf::Sprite copy_sprite = castle_black_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
 
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
@@ -532,6 +542,10 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
+                    sf::Sprite copy_sprite = knight_white_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
+
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
@@ -546,6 +560,10 @@ int main()
                     int pixel_y = pixelPosition.y;
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    sf::Sprite copy_sprite = knight_black_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
 
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
@@ -562,6 +580,10 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
+                    sf::Sprite copy_sprite = bishop_white_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
+
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
@@ -576,6 +598,10 @@ int main()
                     int pixel_y = pixelPosition.y;
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    sf::Sprite copy_sprite = castle_black_left.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
 
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
@@ -592,6 +618,10 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
+                    sf::Sprite copy_sprite = queen_white.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
+
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
@@ -606,6 +636,10 @@ int main()
                     int pixel_y = pixelPosition.y;
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    sf::Sprite copy_sprite = queen_black.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
 
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
@@ -622,6 +656,10 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
+                    sf::Sprite copy_sprite = king_white.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
+
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
@@ -636,6 +674,10 @@ int main()
                     int pixel_y = pixelPosition.y;
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    sf::Sprite copy_sprite = king_black.piece_sprite;
+                    copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
+                    additional_pieces.push_back(copy_sprite);
 
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
@@ -730,6 +772,11 @@ int main()
             {
                 castle_white_right.draw(window);
             }
+        }
+
+        for (const auto& s : additional_pieces)
+        {
+            window.draw(s);
         }
         print_pawns(window, pawn_pieces);
         window.display();

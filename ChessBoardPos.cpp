@@ -10,3 +10,8 @@ auto ChessBoardPos::ToPixelPosition() const noexcept -> sf::Vector2u
 {
     return sf::Vector2u(x * 25, y * 25);
 }
+
+auto ChessBoardPos::ToVector2f() const noexcept -> sf::Vector2f
+{
+    return sf::Vector2f(float(ToPixelPosition().x), float(ToPixelPosition().y));
+}

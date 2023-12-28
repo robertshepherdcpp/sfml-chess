@@ -1,6 +1,6 @@
 #include "ChessBoardPos.h"
 
-ChessBoardPos::ChessBoardPos(int x_, int y_)
+ChessBoardPos::ChessBoardPos(const int x_, const int y_)
 {
     x = x_;
     y = y_;

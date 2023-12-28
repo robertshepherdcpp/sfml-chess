@@ -7,7 +7,7 @@
 
 struct King
 {
-	King(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	King(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 

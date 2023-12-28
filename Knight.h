@@ -7,7 +7,7 @@
 
 struct Knight
 {
-	Knight(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	Knight(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window);
 

@@ -6,7 +6,7 @@
 #include "ChessPiece.h"
 #include "ChessBoardPos.h"
 
-ChessPiece::ChessPiece(std::string filename, ChessBoardPos pos, auto canMoveToPos, auto getAllPosAllowedToMove)
+ChessPiece::ChessPiece(const std::string filename, const ChessBoardPos pos, const auto canMoveToPos, const auto getAllPosAllowedToMove)
 {
     if (!piece_texture.loadFromFile(filename))
     {

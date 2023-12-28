@@ -7,7 +7,7 @@
 
 struct Queen
 {
-	Queen(const std::string& filename, ChessBoardPos pos, int AssocNum);
+	Queen(const std::string& filename, const ChessBoardPos pos, const int AssocNum);
 
 	void draw(sf::RenderWindow& window) noexcept;
 

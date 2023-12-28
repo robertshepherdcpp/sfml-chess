@@ -9,7 +9,7 @@
 #include "Queen.h"
 #include "ChessBoardPos.h"
 
-Queen::Queen(const std::string& filename, ChessBoardPos pos, int AssocNum)
+Queen::Queen(const std::string& filename, const ChessBoardPos pos, const int AssocNum)
 {
     if (!piece_texture.loadFromFile(filename))
     {

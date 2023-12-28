@@ -448,7 +448,7 @@ int main()
             }
             if (event.type == sf::Event::KeyPressed)
             {
-                if (event.key.code == sf::Keyboard::O)
+                if (event.key.code == sf::Keyboard::Z)
                 {
                     sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
                     sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
@@ -461,6 +461,186 @@ int main()
                     int second_pos = wherePressedOnBoard.x;
 
                     chess_pieces_positions[first_pos + second_pos] = 0;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::Q)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 0;
+                    pawn_pieces[first_pos + second_pos] = 2;
+                }
+                else if (event.key.code == sf::Keyboard::A)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 0;
+                    pawn_pieces[first_pos + second_pos] = 1;
+                }
+                else if (event.key.code == sf::Keyboard::W)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 25;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::S)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 1;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::E)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 26;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::D)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 2;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::R)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 27;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::F)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 3;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::T)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 28;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::G)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 4;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::Y)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 29;
+                    pawn_pieces[first_pos + second_pos] = 0;
+                }
+                else if (event.key.code == sf::Keyboard::H)
+                {
+                    sf::Vector2i windowPosition = sf::Mouse::getPosition(window);
+                    sf::Vector2f pixelPosition = window.mapPixelToCoords(windowPosition);
+                    int pixel_x = pixelPosition.x;
+                    int pixel_y = pixelPosition.y;
+
+                    ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
+
+                    int first_pos = wherePressedOnBoard.y * 8;
+                    int second_pos = wherePressedOnBoard.x;
+
+                    chess_pieces_positions[first_pos + second_pos] = 5;
                     pawn_pieces[first_pos + second_pos] = 0;
                 }
             }

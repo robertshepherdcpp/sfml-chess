@@ -144,11 +144,13 @@ int main()
 								int current_y = wherePressedOnBoard.y * 8;
 								int position = current_x + current_y;
 								chess_pieces_positions[position] = castle_black_left.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
 								int current_x_ = CurrentPositionSelected.x;
 								int current_y_ = CurrentPositionSelected.y * 8;
 								int position_ = current_x_ + current_y_;
 								chess_pieces_positions[position_] = 0;
+                                pawn_pieces[position_] = 0;
 							}
                         }
                     }
@@ -162,6 +164,7 @@ int main()
                                 int current_y = wherePressedOnBoard.y * 8;
                                 int position = current_x + current_y;
                                 chess_pieces_positions[position] = castle_black_right.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
                                 int current_x_ = CurrentPositionSelected.x;
                                 int current_y_ = CurrentPositionSelected.y * 8;
@@ -180,6 +183,7 @@ int main()
                                 int current_y = wherePressedOnBoard.y * 8;
                                 int position = current_x + current_y;
                                 chess_pieces_positions[position] = castle_white_left.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
                                 int current_x_ = CurrentPositionSelected.x;
                                 int current_y_ = CurrentPositionSelected.y * 8;
@@ -198,6 +202,7 @@ int main()
                                 int current_y = wherePressedOnBoard.y * 8;
                                 int position = current_x + current_y;
                                 chess_pieces_positions[position] = castle_white_right.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
                                 int current_x_ = CurrentPositionSelected.x;
                                 int current_y_ = CurrentPositionSelected.y * 8;
@@ -216,6 +221,7 @@ int main()
                                 int current_y = wherePressedOnBoard.y * 8;
                                 int position = current_x + current_y;
                                 chess_pieces_positions[position] = knight_black_left.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
                                 int current_x_ = CurrentPositionSelected.x;
                                 int current_y_ = CurrentPositionSelected.y * 8;
@@ -234,6 +240,7 @@ int main()
                                 int current_y = wherePressedOnBoard.y * 8;
                                 int position = current_x + current_y;
                                 chess_pieces_positions[position] = knight_black_right.AssociatedNum;
+                                pawn_pieces[position] = 0;
 
                                 int current_x_ = CurrentPositionSelected.x;
                                 int current_y_ = CurrentPositionSelected.y * 8;
@@ -252,6 +259,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = knight_white_left.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -270,6 +278,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = knight_white_right.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -288,6 +297,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = bishop_black_left.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -306,6 +316,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = bishop_black_right.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -324,6 +335,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = bishop_white_left.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -342,6 +354,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = bishop_white_right.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -360,6 +373,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = king_black.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -378,6 +392,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = king_white.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -396,6 +411,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = queen_black.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
@@ -414,6 +430,7 @@ int main()
                             int current_y = wherePressedOnBoard.y * 8;
                             int position = current_x + current_y;
                             chess_pieces_positions[position] = queen_white.AssociatedNum;
+                            pawn_pieces[position] = 0;
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;

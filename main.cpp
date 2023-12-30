@@ -50,7 +50,7 @@ void print_pawns(sf::RenderWindow& window, std::vector<int>& vec)
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "Snake");
+    sf::RenderWindow window(sf::VideoMode(200, 200), "Chess");
 
     sf::Texture board_texture;
     board_texture.loadFromFile("chess_board.png");

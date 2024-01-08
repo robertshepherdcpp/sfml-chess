@@ -616,7 +616,7 @@ int main()
 
                     ChessBoardPos wherePressedOnBoard{ (pixel_x - (pixel_x % 25)) / 25, (pixel_y - (pixel_y % 25)) / 25 };
 
-                    sf::Sprite copy_sprite = castle_black_left.piece_sprite;
+                    sf::Sprite copy_sprite = bishop_black_left.piece_sprite;
                     copy_sprite.setPosition(wherePressedOnBoard.ToVector2f());
                     additional_pieces.push_back(copy_sprite);
 

@@ -52,6 +52,8 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "Chess");
 
+    sf::Texture blank_texture;
+
     sf::Texture board_texture;
     board_texture.loadFromFile("chess_board.png");
     sf::Sprite board_sprite(board_texture);
@@ -89,6 +91,7 @@ int main()
     };
 
     std::vector<sf::Sprite> additional_pieces{};
+    std::vector<int> addition_no_print{};
 
     Castle castle_black_left("black_castle.png", ChessBoardPos(0, 0), 1);
     Castle castle_black_right("black_castle.png", ChessBoardPos(7, 0), 8);
@@ -479,6 +482,14 @@ int main()
                     int first_pos = wherePressedOnBoard.y * 8;
                     int second_pos = wherePressedOnBoard.x;
 
+                    for (int i = 0; i < additional_pieces.size(); i++)
+                    {
+                        if (additional_pieces[i].getPosition().x == pixel_x && additional_pieces[i].getPosition().y == pixel_y)
+                        {
+                            addition_no_print.push_back(i);
+                        }
+                    }
+
                     chess_pieces_positions[first_pos + second_pos] = 0;
                     pawn_pieces[first_pos + second_pos] = 0;
                 }
@@ -791,9 +802,12 @@ int main()
             }
         }
 
-        for (const auto& s : additional_pieces)
+        for (int x = 0; x < additional_pieces.size(); x++)
         {
-            window.draw(s);
+            if (std::ranges::find(addition_no_print, x) == std::end(addition_no_print))
+            {
+                window.draw(additional_pieces[x]);
+            }
         }
         print_pawns(window, pawn_pieces);
         window.display();

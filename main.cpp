@@ -123,10 +123,10 @@ int main()
             {
                 window.close();
             }
-            if (event.type == sf::Event::Resized)
-            {
-                window.setSize(sf::Vector2u(200, 200));
-            }
+            //if (event.type == sf::Event::Resized)
+            //{
+            //    window.setSize(sf::Vector2u(200, 200));
+            //}
             if (event.type == sf::Event::MouseButtonReleased)
             {
                 ChessBoardPos wherePressedOnBoard = board.WhereHasBeenSelected(event);
@@ -266,7 +266,7 @@ int main()
 
                             int current_x_ = CurrentPositionSelected.x;
                             int current_y_ = CurrentPositionSelected.y * 8;
-                            int position_ = current_x_ + current_y_;
+                            int position_ = current_x_ + current_y_;          
                             chess_pieces_positions[position_] = 0;
                         }
                     }
